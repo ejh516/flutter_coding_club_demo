@@ -6,9 +6,12 @@ class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text(
-        'Hello, world!',
-        style: TextStyle(fontSize: 36),
+      child: Column (
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text( 'Hello, world!', style: TextStyle(fontSize: 36)),
+          Text( 'How are you?', style: TextStyle(fontSize: 24)),
+        ],
       ),
     );
   }
