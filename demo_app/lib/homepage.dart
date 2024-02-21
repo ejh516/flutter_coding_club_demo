@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'info_page.dart';
 
 class Homepage extends StatefulWidget {
-
   const Homepage({super.key});
 
   @override
@@ -10,6 +10,7 @@ class Homepage extends StatefulWidget {
 
 class _HomepageState extends State<Homepage> {
   String _name = "mate";
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -22,17 +23,30 @@ class _HomepageState extends State<Homepage> {
 
           ElevatedButton(
             onPressed: () {
+
               setState(() { 
-                if (_name != "Ed") {
-                  _name = "Ed";
-                } else {
-                  _name = "again";
-                }
+                _name = "Ed";
               });
+
             },
             child: Text("My name is Ed!")
           ),
 
+          SizedBox(height: 20),
+
+          IconButton(
+            iconSize: 72,
+            icon: Icon(Icons.account_circle),
+            onPressed: () {
+
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => InfoPage(name: _name),
+                ),
+              );
+
+            },
+          )
         ],
       ),
     );
