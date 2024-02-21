@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'homepage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,12 +13,8 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       home: Scaffold(
-        body: Center(
-          child: Text(
-            'Hello, world!',
-            style: TextStyle(fontSize: 36),
-          ),
-        )
+        appBar: AppBar(title: Text('Flutter demo')),
+        body: Homepage(),
       )
     );
   }
